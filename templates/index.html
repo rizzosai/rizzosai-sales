@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RizzosAI Domain Rental - Premium Digital Real Estate</title>
+    <meta charset="UTF-8" />
+    <title>Claim Your Domain | RizzosAI</title>
     <style>
         * {
             margin: 0;
@@ -13,467 +13,256 @@
 
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .hero-section {
-            text-align: center;
-            padding: 80px 0;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            margin-bottom: 50px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .hero-title {
-            font-size: 3.5em;
-            font-weight: 900;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            position: relative;
-            z-index: 2;
-        }
-
-        .highlight-box {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
-            position: relative;
-            z-index: 2;
-        }
-
-        .highlight-box h3 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-
-        .domain-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-
-        .domain-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .domain-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .domain-price {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #ffd700;
-            margin-bottom: 10px;
-        }
-
-        .domain-title {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .features-list {
-            list-style: none;
-            text-align: left;
-            margin: 20px 0;
-        }
-
-        .features-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .features-list li:before {
-            content: "✓ ";
-            color: #4ecdc4;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #4ecdc4, #44a08d);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .cta-button:hover {
-            background: linear-gradient(135deg, #44a08d, #4ecdc4);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(68, 160, 141, 0.4);
-        }
-
-        .system-explanation {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 50px 0;
-            backdrop-filter: blur(10px);
-        }
-
-        .stats-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
-        }
-
-        .stat-box {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px 20px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #ffd700;
-            display: block;
-        }
-
-        .testimonials {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 50px 0;
-            backdrop-filter: blur(10px);
-        }
-
-        .testimonial {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-left: 4px solid #4ecdc4;
-        }
-
-        .form-section {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 50px 0;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .domain-form {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 15px;
-            max-width: 500px;
-            margin: 30px auto;
-        }
-
-        .domain-input {
-            padding: 15px 20px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1em;
-            background: rgba(255, 255, 255, 0.9);
             color: #333;
         }
 
-        .purchase-button {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1em;
+        .red-white-blue {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        main {
+            max-width: 700px;
+            margin: 40px auto 0 auto;
+            padding: 32px 24px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 24px rgba(0,31,91,0.08);
+            border: 2px solid #e60000;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1em;
+        }
+
+        h2 {
+            color: #001f5b;
+        }
+
+        h3 {
+            color: #001f5b;
+        }
+
+        p, li {
+            margin-bottom: 0.8em;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 1.5em;
+            margin-bottom: 1em;
+        }
+
+        .highlight-box {
+            margin-top: 32px;
+            padding: 20px;
+            background: #f5f7fa;
+            border-radius: 10px;
+            border-left: 6px solid #001f5b;
+            box-shadow: 0 2px 8px rgba(0,31,91,0.06);
+        }
+
+        .highlight-box h3 {
+            color: #001f5b;
+            margin-top: 0;
+        }
+
+        .form-section {
+            margin: 40px auto 0 auto;
+            max-width: 700px;
+            text-align: center;
+            padding: 32px 24px;
+            background: #f5f7fa;
+            border-radius: 12px;
+            box-shadow: 0 0 24px rgba(0,31,91,0.08);
+            border: 2px solid #e60000;
+        }
+
+        .form-section h2 {
+            color: #e60000;
+        }
+
+        form {
+            margin: 24px 0;
+        }
+
+        input[type="text"], input[type="email"] {
+            padding: 12px;
+            width: 70%;
+            max-width: 320px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        button[type="submit"] {
+            display: inline-block;
+            background: #e60000;
+            color: #fff;
             font-weight: bold;
+            font-size: 1.1em;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(230,0,0,0.08);
+            transition: background 0.2s;
+            border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
 
-        .purchase-button:hover {
-            background: linear-gradient(135deg, #ee5a24, #ff6b6b);
-            transform: scale(1.05);
+        button[type="submit"]:hover {
+            background: #cc0000;
         }
 
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 50px 0;
+        .content-section {
+            margin-top: 48px;
+            padding: 32px 24px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 24px rgba(0,31,91,0.08);
+            border: 2px solid #001f5b;
         }
 
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
+        .content-section h2 {
+            color: #e60000;
+        }
+
+        footer {
+            width: 100%;
+            background: #f5f7fa;
+            padding: 32px 0;
             text-align: center;
-            backdrop-filter: blur(10px);
+            margin-top: 48px;
+            border-top: 2px solid #e60000;
         }
 
-        .benefit-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            display: block;
+        footer a {
+            color: #001f5b;
+            font-weight: bold;
+            margin: 0 18px;
+            text-decoration: underline;
         }
 
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 30px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5em;
-            }
-            
-            .domain-form {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 10px;
-            }
+        #errorMsg {
+            color: #e60000;
+            font-weight: bold;
+            margin-top: 12px;
+            display: none;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <h1 class="hero-title">� Turn Your Domain Into Prime Digital Property That Pays You—Even While You Sleep</h1>
-            <p class="hero-subtitle">Imagine owning a piece of the internet so valuable, people are willing to pay you $20 a day just to rent it.</p>
-            
-            <div class="highlight-box">
-                <h3>🎯 Secure Your Brand and Join a System That Gives Everyone a Fair Start!</h3>
-                <p>Your first referral is handled by the system—it works to get your first renter for you, so you don't have to chase anyone. Every member gets a fair start and a real chance to profit!</p>
+
+<body class="red-white-blue">
+    <audio id="welcome-audio" src="https://rizzosai.s3.amazonaws.com/dab5898c-5d77-446f-aec4-2e2b2d1fefdc.mp3" autoplay
+        hidden></audio>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            var audio = document.getElementById('welcome-audio');
+            if (audio) {
+                audio.play().catch(function () { });
+            }
+        });
+    </script>
+    <header
+        style="background:linear-gradient(90deg,#e60000 33%,#fff 33%,#fff 66%,#001f5b 66%);color:#001f5b;padding:32px 0 16px 0;text-align:center;">
+        <div style="display:flex;justify-content:center;align-items:center;width:100%;">
+            <div
+                style="background:#fff;padding:16px 32px;border-radius:16px;box-shadow:0 2px 12px rgba(0,31,91,0.08);margin-bottom:0.5em;text-align:center;">
+                <h1 style="font-size:2.5em;margin-bottom:0.2em;color:#e60000;">Welcome to RizzosAI Domains</h1>
+                <p style="font-size:1.2em;color:#001f5b;margin-bottom:0;text-align:center;">You're not just buying a
+                    name,<br>you are buying into your future with wealth.</p>
             </div>
-        </section>
-
-        <!-- What You're Renting -->
-        <section class="system-explanation">
-            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px;">🌐 What Is a Domain Name, and Why Should You Care?</h2>
-            
-            <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin: 30px 0;">
-                <p style="font-size: 1.2em;">A domain name is your unique address online. It's your digital storefront, your brand, your identity. But with RizzosAI, it's also a rental property. When you join, you get your own domain name, and you can rent it out for $20 a day. That's right—your spot on the web becomes a source of passive income.</p>
-            </div>
-
-            <h3 style="color: #4ecdc4; font-size: 2em; margin: 40px 0 20px 0; text-align: center;">How the RizzosAI System Works</h3>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <span class="benefit-icon">🏗️</span>
-                    <h4>1. Claim Your Domain</h4>
-                    <p>This is your prime property online - your unique address on the web</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <span class="benefit-icon">📈</span>
-                    <h4>2. System Fills Your Spots</h4>
-                    <p>The system puts your domain into the funnel to attract renters for your first 3 spots</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <span class="benefit-icon">⚡</span>
-                    <h4>3. Start Earning</h4>
-                    <p>You only need 2 active referrals paying $20/day to cover costs and start profiting</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <span class="benefit-icon">💰</span>
-                    <h4>4. Keep All Future Earnings</h4>
-                    <p>After your first 3, every new referral goes directly to you!</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why This Is Perfect -->
-        <section>
-            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px;">🎯 Why This Is Perfect for You</h2>
-            
-            <div class="domain-grid">
-                <div class="domain-card">
-                    <div class="domain-price">💰</div>
-                    <h3 class="domain-title">Passive Income</h3>
-                    <ul class="features-list">
-                        <li>Your domain works for you 24/7</li>
-                        <li>Earn $20/day from each renter</li>
-                        <li>Money comes in even while you sleep</li>
-                        <li>No daily management required</li>
-                    </ul>
-                </div>
-
-                <div class="domain-card">
-                    <div class="domain-price">🚀</div>
-                    <h3 class="domain-title">Low Barrier to Entry</h3>
-                    <ul class="features-list">
-                        <li>No tech skills needed</li>
-                        <li>We guide you every step of the way</li>
-                        <li>Simple setup process</li>
-                        <li>Everything handled for you</li>
-                    </ul>
-                </div>
-
-                <div class="domain-card">
-                    <div class="domain-price">🤝</div>
-                    <h3 class="domain-title">Support & Community</h3>
-                    <ul class="features-list">
-                        <li>You'll never be left alone</li>
-                        <li>Coey welcomes you in backoffice</li>
-                        <li>Guided journey to freedom</li>
-                        <li>Community support system</li>
-                    </ul>
-                </div>
-
-                <div class="domain-card">
-                    <div class="domain-price">🏠</div>
-                    <h3 class="domain-title">Real Ownership</h3>
-                    <ul class="features-list">
-                        <li>Your domain is your asset</li>
-                        <li>Rent it, build on it, or sell it</li>
-                        <li>Prime digital real estate</li>
-                        <li>Your choice, your future</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Revolutionary Commission System -->
-        <section class="system-explanation">
-            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px;">🔄 Here's What Happens When You Join</h2>
-            
-            <div style="background: linear-gradient(135deg, #ff6b6b, #ee5a24); padding: 30px; border-radius: 15px; margin: 30px 0;">
-                <h3 style="font-size: 1.8em; margin-bottom: 15px;">🎯 Never Left Alone</h3>
-                <p style="font-size: 1.2em;">When you join our domain registrar, you are never left alone. You'll be guided every step of the way on your journey to freedom. You will have access to your own backoffice, where you'll be welcomed by my best mate Coey, who will help you get started and support you as you grow.</p>
-            </div>
-
-            <div class="stats-section">
-                <div class="stat-box">
-                    <span class="stat-number">1st</span>
-                    <p>Referral handled by the system for you</p>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-number">2nd</span>
-                    <p>Goes to system owner to keep platform running</p>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-number">3</span>
-                    <p>Next referrals automatically provided</p>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-number">∞</span>
-                    <p>All future referrals go directly to you!</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ready to Start Earning -->
-        <section class="testimonials">
-            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px;">🚀 Ready to Start Earning?</h2>
-            
-            <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin: 30px 0; text-align: center;">
-                <p style="font-size: 1.3em; margin-bottom: 20px;">Don't just dream about wealth—own it. Claim your domain, let the system fill your first three spots, and start collecting rent on your prime digital property.</p>
-                <p style="font-size: 1.2em; color: #4ecdc4;"><strong>With RizzosAI Domains, you're building wealth, creating freedom, and enjoying the kind of passive income most people only wish for.</strong></p>
-            </div>
-
-            <div style="background: linear-gradient(135deg, #ff6b6b, #ee5a24); padding: 30px; border-radius: 15px; margin: 30px 0; text-align: center;">
-                <h3 style="font-size: 2em; margin-bottom: 15px;">RizzosAI Domains</h3>
-                <p style="font-size: 1.2em;"><strong>Your name, your property, your future—earning for you every day.</strong></p>
-            </div>
-        </section>
-
-        <!-- Lead Capture Form -->
+        </div>
+    </header>
+    <main>
+        <h2 style="color:#001f5b;">Claim Your Domain & Get Started</h2>
+        <p style="font-size:1.1em;">Secure your brand and join a system that gives everyone a fair start. Here's what
+            happens when you join:</p>
+        <ul>
+            <li><b>Your first referral is handled by the system</b>—it works to get your first renter for you, so you
+                don't have to chase anyone. It may take a little time, but you're never left alone.</li>
+            <li><b>Your second referral goes to the system owner</b> to keep the platform running.</li>
+            <li><b>The system automatically gets you your next 3 referrals</b>.</li>
+            <li>Once you have 3, <b>the system stops placing new referrals for you</b>. All future referrals go directly
+                to you!</li>
+            <li>Every member gets a fair start and a real chance to profit.</li>
+        </ul>
+        <div class="highlight-box">
+            <h3>Never Left Alone</h3>
+            <p style="font-size:1.1em;color:#222;">When you join our domain registrar, you are never left alone. You'll
+                be guided every step of the way on your journey to freedom.<br><br>
+                You will have access to your own backoffice, where you'll be welcomed by my best mate Coey, who will
+                help you get started and support you as you grow.</p>
+        </div>
         <section class="form-section">
-            <h2 style="font-size: 2.5em; margin-bottom: 20px;">🚀 Join & Claim Your Domain</h2>
-            <p style="font-size: 1.2em; margin-bottom: 30px;">Ready to get started? Choose your domain name below and join the system. Once you complete payment, your domain will be registered and you'll be placed in the funnel to start earning!</p>
-            
-            <form id="domainForm" style="max-width: 500px; margin: 0 auto;">
-                <div style="margin-bottom: 20px;">
-                    <input type="text" id="firstName" name="first_name" placeholder="Your First Name" required 
-                           style="width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1.1em; margin-bottom: 15px;">
-                    <input type="email" id="email" name="email" placeholder="Your Best Email" required 
-                           style="width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1.1em; margin-bottom: 15px;">
-                    <input type="text" id="domainPreference" name="domain_preference" placeholder="Enter your desired domain name" required
-                           style="width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1.1em; margin-bottom: 15px;">
-                </div>
-                
-                <button type="submit" class="purchase-button" style="width: 100%; padding: 20px;">
-                    🔥 PROCEED TO PAYMENT
-                </button>
+            <h2>Join & Claim Your Domain</h2>
+            <p style="font-size:1.1em;color:#222;">Ready to get started? Choose your domain name below and join the
+                system. Once you complete payment, your domain will be registered and you'll be placed in the funnel to
+                start earning!</p>
+            <form id="domainForm">
+                <input type="text" id="firstName" name="first_name" placeholder="Your First Name" required />
+                <br>
+                <input type="email" id="email" name="email" placeholder="Your Best Email" required />
+                <br>
+                <input type="text" id="domainInput" name="domain_preference" placeholder="Enter your desired domain name"
+                    required />
+                <br><br>
+                <button type="submit">Proceed to Payment</button>
             </form>
-            
-            <p style="margin-top: 20px; opacity: 0.8;">
-                ✅ After payment, you'll be guided to set up your backoffice and start your journey!<br>
-                ✅ Your domain becomes prime digital property earning $20/day<br>
-                ✅ System fills your first 3 spots automatically
+            <div id="errorMsg"></div>
+            <p style="font-size:0.95em;color:#555;">After payment, you'll be guided to set up your backoffice and start
+                your journey!</p>
+        </section>
+        <section class="content-section">
+            <h2>Turn Your Domain Into Prime Digital Property That Pays You—Even While You Sleep</h2>
+            <p style="font-size:1.1em;color:#222;">Imagine owning a piece of the internet so valuable, people are
+                willing to pay you $20 a day just to rent it. At RizzosAI Domains, we make this possible for everyone.
+                Your domain name isn't just a web address—it's prime digital property, a spot on the web that can earn
+                you money every single day, even while you sleep.</p>
+            <h3>What Is a Domain Name, and Why Should You Care?</h3>
+            <p style="font-size:1.1em;color:#222;">A domain name is your unique address online. It's your digital
+                storefront, your brand, your identity. But with RizzosAI, it's also a rental property. When you join,
+                you get your own domain name, and you can rent it out for $20 a day. That's right—your spot on the web
+                becomes a source of passive income.</p>
+            <h3>How the RizzosAI System Works</h3>
+            <ul>
+                <li><b>Claim your domain name.</b> This is your prime property online.</li>
+                <li><b>The system puts your domain into my funnel</b>—a special process designed to attract renters for
+                    you. It may take a little time, but the system works to fill your first three spots so you don't
+                    have to chase anyone.</li>
+                <li><b>All you need is 2 active referrals paying you rent every day</b> to cover your costs and start
+                    profiting.</li>
+                <li><b>After your first 3, every new referral goes directly to you.</b> The system stops placing new
+                    referrals for you, and you keep all future earnings.</li>
+                <li><b>Rent out your domain for $20 a day</b> and watch your income grow—even while you sleep.</li>
+            </ul>
+            <p style="font-size:1.1em;color:#222;">This is more than just owning a domain. It's about turning your
+                digital asset into a money-making machine. You're not just buying a name—you're investing in prime real
+                estate that pays you, day after day.</p>
+            <h3>Why This Is Perfect for You</h3>
+            <ul>
+                <li><b>Passive income:</b> Your domain works for you 24/7.</li>
+                <li><b>Low barrier to entry:</b> No tech skills needed. We guide you every step of the way.</li>
+                <li><b>Support and community:</b> You'll never be left alone. Our backoffice and my mate Coey are here
+                    to help you succeed.</li>
+                <li><b>Real ownership:</b> Your domain is your asset. Rent it, build on it, or sell it—your choice.</li>
+            </ul>
+            <h3>Ready to Start Earning?</h3>
+            <p style="font-size:1.1em;color:#222;">Don't just dream about wealth—own it. Claim your domain, let the
+                system fill your first three spots, and start collecting rent on your prime digital property. With
+                RizzosAI Domains, you're building wealth, creating freedom, and enjoying the kind of passive income most
+                people only wish for.<br><br>
+                <b>RizzosAI Domains: Your name, your property, your future—earning for you every day.</b>
             </p>
         </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2025 RizzosAI Domains. All rights reserved.</p>
-            <p>Your name, your property, your future—earning for you every day.</p>
-            <p style="margin-top: 15px;">
-                <a href="/privacy" style="color: #4ecdc4; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
-                <a href="/terms" style="color: #4ecdc4; text-decoration: none; margin: 0 10px;">Terms & Conditions</a>
-            </p>
-        </footer>
-    </div>
+    </main>
+    <footer>
+        <div style="max-width:700px;margin:0 auto;">
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms & Conditions</a>
+        </div>
+    </footer>
 
     <script>
         // Form submission
@@ -481,12 +270,25 @@
             e.preventDefault();
             
             const formData = new FormData(e.target);
+            const errorMsg = document.getElementById('errorMsg');
+            errorMsg.style.display = 'none';
+            
+            // Validate required fields
+            const firstName = formData.get('first_name');
+            const email = formData.get('email');
+            const domain = formData.get('domain_preference');
+            
+            if (!firstName || !email || !domain) {
+                errorMsg.textContent = 'Please fill in all fields.';
+                errorMsg.style.display = 'block';
+                return;
+            }
             
             // Prepare data for webhook - single domain registration at $20/day
             const data = {
-                email: formData.get('email'),
-                first_name: formData.get('first_name'),
-                domain_preference: formData.get('domain_preference'),
+                email: email,
+                first_name: firstName,
+                domain_preference: domain,
                 selected_plan: 'domain_rental',
                 amount: 20
             };
@@ -505,34 +307,14 @@
                     // Redirect to success page
                     window.location.href = '/success';
                 } else {
-                    alert('There was an error processing your request. Please try again.');
+                    errorMsg.textContent = 'There was an error processing your request. Please try again.';
+                    errorMsg.style.display = 'block';
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('There was an error processing your request. Please try again.');
-            });
-        });
-
-        // Add animation on scroll
-        window.addEventListener('scroll', function() {
-            const cards = document.querySelectorAll('.domain-card, .benefit-card');
-            cards.forEach(card => {
-                const cardTop = card.getBoundingClientRect().top;
-                if (cardTop < window.innerHeight - 100) {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }
-            });
-        });
-
-        // Initialize animations
-        document.addEventListener('DOMContentLoaded', function() {
-            const cards = document.querySelectorAll('.domain-card, .benefit-card');
-            cards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'all 0.5s ease';
+                errorMsg.textContent = 'There was an error processing your request. Please try again.';
+                errorMsg.style.display = 'block';
             });
         });
     </script>
