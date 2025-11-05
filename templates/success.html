@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Domain Empire! - RizzosAI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .success-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .success-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .success-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #4ecdc4;
+        }
+
+        .success-subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .next-steps {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .step-number {
+            background: #4ecdc4;
+            color: #333;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        .dashboard-button {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 10px;
+        }
+
+        .dashboard-button:hover {
+            background: linear-gradient(135deg, #44a08d, #4ecdc4);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(68, 160, 141, 0.4);
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .countdown {
+            font-size: 1.2em;
+            margin: 20px 0;
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">🎉</div>
+        <h1 class="success-title">Welcome to Your Domain Empire!</h1>
+        <p class="success-subtitle">Your domain rental space is being set up and your first 5 referrals are being assigned!</p>
+        
+        <div class="info-box">
+            <h3>🎯 Your Domain Rental is Active!</h3>
+            <p>You now have premium space on RizzosAI.com with full hosting, SSL, and access to our revolutionary "Next 5" commission system.</p>
+        </div>
+
+        <div class="next-steps">
+            <h3 style="text-align: center; margin-bottom: 20px; color: #4ecdc4;">Next Steps to Start Earning:</h3>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>
+                    <strong>Access Your Back Office</strong><br>
+                    Log into your personal dashboard to manage your domain rental and track your commissions.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>
+                    <strong>Receive Your 5 Referrals</strong><br>
+                    Our system is automatically assigning your first 5 referrals. You'll see them in your dashboard within 24 hours.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>
+                    <strong>Start Earning Immediately</strong><br>
+                    Your domain space is now generating income 24/7 through our fair-share "Next 5" commission system.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div>
+                    <strong>Scale Your Empire</strong><br>
+                    Use your earnings to rent additional domain space and expand your digital real estate portfolio.
+                </div>
+            </div>
+        </div>
+
+        <div style="margin: 30px 0;">
+            <a href="https://rizzosai-backend.onrender.com/dashboard" class="dashboard-button">
+                🏢 ACCESS MY BACK OFFICE
+            </a>
+            <a href="/" class="dashboard-button" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24);">
+                🔙 BACK TO SALES PAGE
+            </a>
+        </div>
+
+        <div class="countdown">
+            <strong>⏰ Your 5 referrals will be assigned within: <span id="countdown">24:00:00</span></strong>
+        </div>
+
+        <p style="margin-top: 30px; opacity: 0.8;">
+            Questions? Email us at <strong>admin@rizzosai.com</strong><br>
+            Welcome to the future of domain rental!
+        </p>
+    </div>
+
+    <script>
+        // Countdown timer for referral assignment
+        function startCountdown() {
+            let hours = 24;
+            let minutes = 0;
+            let seconds = 0;
+            
+            const countdownElement = document.getElementById('countdown');
+            
+            function updateCountdown() {
+                if (seconds > 0) {
+                    seconds--;
+                } else if (minutes > 0) {
+                    minutes--;
+                    seconds = 59;
+                } else if (hours > 0) {
+                    hours--;
+                    minutes = 59;
+                    seconds = 59;
+                } else {
+                    countdownElement.textContent = "Your referrals are ready!";
+                    return;
+                }
+                
+                const display = 
+                    String(hours).padStart(2, '0') + ':' +
+                    String(minutes).padStart(2, '0') + ':' +
+                    String(seconds).padStart(2, '0');
+                    
+                countdownElement.textContent = display;
+                setTimeout(updateCountdown, 1000);
+            }
+            
+            updateCountdown();
+        }
+        
+        // Start countdown when page loads
+        document.addEventListener('DOMContentLoaded', startCountdown);
+        
+        // Auto-redirect to dashboard after 10 seconds
+        setTimeout(function() {
+            const redirectButton = document.querySelector('.dashboard-button');
+            redirectButton.style.animation = 'pulse 1s infinite';
+            redirectButton.innerHTML = '🏢 REDIRECTING TO BACK OFFICE...';
+            
+            setTimeout(function() {
+                window.location.href = 'https://rizzosai-backend.onrender.com/dashboard';
+            }, 3000);
+        }, 10000);
+    </script>
+
+    <style>
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RizzosAI Domain Rental - Premium Digital Real Estate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .hero-title {
+            font-size: 3.5em;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .highlight-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .domain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .domain-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .domain-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .domain-price {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .domain-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .features-list {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .features-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .features-list li:before {
+            content: "✓ ";
+            color: #4ecdc4;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(135deg, #44a08d, #4ecdc4);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(68, 160, 141, 0.4);
+        }
+
+        .system-explanation {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffd700;
+            display: block;
+        }
+
+        .testimonials {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #4ecdc4;
+        }
+
+        .form-section {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .domain-form {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 15px;
+            max-width: 500px;
+            margin: 30px auto;
+        }
+
+        .domain-input {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+
+        .purchase-button {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .purchase-button:hover {
+            background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+            transform: scale(1.05);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .benefit-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5em;
+            }
+            
+            .domain-form {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">🏢 Premium Domain Rental Empire</h1>
+            <p class="hero-subtitle">Rent premium space on RizzosAI.com and build your digital empire</p>
+            
+            <div class="highlight-box">
+                <h3>🎯 WE PROVIDE YOUR FIRST 5 REFERRALS!</h3>
+                <p>No networking required! Our automated system provides your first 5 referrals to get you started earning immediately. This is digital real estate that works 24/7!</p>
+            </div>
+        </section>
+
+        <!-- What You're Renting -->
+        <section class="system-explanation">
+            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px;">🌐 What You're Actually Renting</h2>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin: 30px 0;">
+                <h3 style="color: #4ecdc4; font-size: 1.8em; margin-bottom: 15px;">Premium Digital Real Estate</h3>
+                <p style="font-size: 1.2em;">You're renting premium subdomain space on our high-authority domain <strong>RizzosAI.com</strong>. Think of it like renting office space in a premium building - except this digital real estate generates income 24/7!</p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">🏗️</span>
+                    <h4>Full Infrastructure</h4>
+                    <p>Hosting, SSL certificates, security, and maintenance all included</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <span class="benefit-icon">📈</span>
+                    <h4>SEO Authority</h4>
+                    <p>Benefit from our high-domain authority and search rankings</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <span class="benefit-icon">⚡</span>
+                    <h4>Instant Setup</h4>
+                    <p>Your subdomain goes live immediately with professional tools</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <span class="benefit-icon">💰</span>
+                    <h4>Commission System</h4>
+                    <p>Access to our revolutionary "Next 5" fair-share earning system</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Domain Rental Plans -->
+        <section>
+            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px;">🎯 Choose Your Domain Rental Level</h2>
+            
+            <div class="domain-grid">
+                <div class="domain-card">
+                    <div class="domain-price">$29<span style="font-size: 0.5em;">/day</span></div>
+                    <h3 class="domain-title">Basic Starter</h3>
+                    <ul class="features-list">
+                        <li>Premium subdomain on RizzosAI.com</li>
+                        <li>SSL security & hosting included</li>
+                        <li>AI-powered landing pages</li>
+                        <li>"Next 5" commission access</li>
+                        <li>Domain management tools</li>
+                        <li>Basic traffic analytics</li>
+                    </ul>
+                    <button class="cta-button" onclick="selectPlan('basic', 29)">Rent This Space</button>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-price">$97<span style="font-size: 0.5em;">/day</span></div>
+                    <h3 class="domain-title">Starter Tools</h3>
+                    <ul class="features-list">
+                        <li>Everything in Basic Starter</li>
+                        <li>Enhanced domain features</li>
+                        <li>Custom subdomain options</li>
+                        <li>Advanced traffic analytics</li>
+                        <li>Priority domain support</li>
+                        <li>Multiple page templates</li>
+                    </ul>
+                    <button class="cta-button" onclick="selectPlan('starter', 97)">Rent This Space</button>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-price">$197<span style="font-size: 0.5em;">/day</span></div>
+                    <h3 class="domain-title">Professional</h3>
+                    <ul class="features-list">
+                        <li>Everything in Starter Tools</li>
+                        <li>Premium domain portfolio access</li>
+                        <li>Multiple subdomain management</li>
+                        <li>Advanced hosting features</li>
+                        <li>VIP domain support</li>
+                        <li>Professional SEO tools</li>
+                    </ul>
+                    <button class="cta-button" onclick="selectPlan('professional', 197)">Rent This Space</button>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-price">$497<span style="font-size: 0.5em;">/day</span></div>
+                    <h3 class="domain-title">Empire</h3>
+                    <ul class="features-list">
+                        <li>Everything in Professional</li>
+                        <li>Premium domain authority</li>
+                        <li>Custom domain integration</li>
+                        <li>Enterprise-level hosting</li>
+                        <li>Dedicated server resources</li>
+                        <li>White-label options</li>
+                    </ul>
+                    <button class="cta-button" onclick="selectPlan('empire', 497)">Rent This Space</button>
+                </div>
+
+                <div class="domain-card" style="border: 3px solid #ffd700; position: relative;">
+                    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #ffd700; color: #333; padding: 5px 15px; border-radius: 15px; font-weight: bold;">ULTIMATE</div>
+                    <div class="domain-price">$999<span style="font-size: 0.5em;">/day</span></div>
+                    <h3 class="domain-title">Enterprise</h3>
+                    <ul class="features-list">
+                        <li>Everything in Empire</li>
+                        <li>Full domain ownership rights</li>
+                        <li>White-label domain options</li>
+                        <li>Unlimited subdomain creation</li>
+                        <li>Your own domain empire</li>
+                        <li>Maximum commission potential</li>
+                    </ul>
+                    <button class="cta-button" onclick="selectPlan('enterprise', 999)">Rent This Space</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Revolutionary Commission System -->
+        <section class="system-explanation">
+            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px;">🔄 Revolutionary "Next 5" System</h2>
+            
+            <div style="background: linear-gradient(135deg, #ff6b6b, #ee5a24); padding: 30px; border-radius: 15px; margin: 30px 0;">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px;">🎯 Fair-Share Commission Queue</h3>
+                <p style="font-size: 1.2em;">Unlike traditional affiliate systems that favor early adopters, our "Next 5" queue ensures EVERYONE gets their fair turn to earn commissions. No gaming, no favoritism - just pure fairness!</p>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat-box">
+                    <span class="stat-number">5</span>
+                    <p>Automatic Referrals Provided</p>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">24/7</span>
+                    <p>Domain Space Working</p>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">100%</span>
+                    <p>Fair Commission Distribution</p>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">∞</span>
+                    <p>Earning Potential</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="testimonials">
+            <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px;">⚡ How Domain Rental Works</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #4ecdc4;">Step 1: Choose Your Space</h3>
+                    <p>Select the domain rental level that fits your goals</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #4ecdc4;">Step 2: Instant Setup</h3>
+                    <p>Your subdomain goes live immediately with all tools</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #4ecdc4;">Step 3: Get 5 Referrals</h3>
+                    <p>We automatically provide your first 5 referrals</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; text-align: center;">
+                    <h3 style="color: #4ecdc4;">Step 4: Earn Daily</h3>
+                    <p>Start earning from the "Next 5" commission system</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Capture Form -->
+        <section class="form-section">
+            <h2 style="font-size: 2.5em; margin-bottom: 20px;">🚀 Start Your Domain Empire Today</h2>
+            <p style="font-size: 1.2em; margin-bottom: 30px;">Enter your details to access your personal back office and choose your domain rental level</p>
+            
+            <form id="domainForm" style="max-width: 500px; margin: 0 auto;">
+                <div style="margin-bottom: 20px;">
+                    <input type="text" id="firstName" name="first_name" placeholder="Your First Name" required 
+                           style="width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1.1em; margin-bottom: 15px;">
+                    <input type="email" id="email" name="email" placeholder="Your Best Email" required 
+                           style="width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1.1em; margin-bottom: 15px;">
+                    <input type="text" id="domainPreference" name="domain_preference" placeholder="Preferred Domain Name (optional)" 
+                           style="width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 1.1em; margin-bottom: 15px;">
+                </div>
+                
+                <button type="submit" class="purchase-button" style="width: 100%; padding: 20px;">
+                    🔥 ACCESS MY BACK OFFICE NOW
+                </button>
+            </form>
+            
+            <p style="margin-top: 20px; opacity: 0.8;">
+                ✅ Instant access to your personal back office<br>
+                ✅ Choose your domain rental level<br>
+                ✅ Start earning with the "Next 5" system
+            </p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 RizzosAI Domain Rental. All rights reserved.</p>
+            <p>Premium digital real estate • Fair commission system • Instant setup</p>
+        </footer>
+    </div>
+
+    <script>
+        // Plan selection
+        function selectPlan(planName, price) {
+            localStorage.setItem('selectedPlan', JSON.stringify({
+                name: planName,
+                price: price
+            }));
+            
+            // Scroll to form
+            document.querySelector('.form-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Update button text to show selected plan
+            document.querySelector('.purchase-button').innerHTML = 
+                `🔥 START ${planName.toUpperCase()} RENTAL - $${price}/DAY`;
+        }
+
+        // Form submission
+        document.getElementById('domainForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const selectedPlan = JSON.parse(localStorage.getItem('selectedPlan') || '{"name":"basic","price":29}');
+            
+            // Prepare data for webhook
+            const data = {
+                email: formData.get('email'),
+                first_name: formData.get('first_name'),
+                domain_preference: formData.get('domain_preference'),
+                selected_plan: selectedPlan.name,
+                amount: selectedPlan.price
+            };
+            
+            // Send to sales site endpoint which forwards to back office
+            fetch('/domain-purchase', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.status === 'success') {
+                    // Redirect to success page
+                    window.location.href = '/success';
+                } else {
+                    alert('There was an error processing your request. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error processing your request. Please try again.');
+            });
+        });
+
+        // Add animation on scroll
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.domain-card, .benefit-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < window.innerHeight - 100) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.domain-card, .benefit-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease';
+            });
+        });
+    </script>
+</body>
+</html>
